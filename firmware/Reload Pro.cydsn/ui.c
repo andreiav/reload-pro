@@ -346,7 +346,7 @@ static void draw_status(const display_config_t *config) {
     if(get_output_mode() == OUTPUT_MODE_OFF) {
     	Display_DrawText(2, 160 - 36, "OFF", 1);
     } else {
-        Display_Clear(2, 124, 4, 160, 0);
+        Display_DrawText(2, 160 - 36, " ON", 1);
     }        
         
 	// Draw the two smaller displays
