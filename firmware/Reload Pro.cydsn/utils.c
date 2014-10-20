@@ -48,6 +48,10 @@ int get_current_setpoint() {
 	return state.current_setpoint;
 }
 
+int get_min_voltage() {
+    return state.lower_voltage_limit;
+}
+
 // Loads the splashscreen image
 // ONLY RUN BEFORE STARTING THE RTOS KERNEL!
 // (And after initializing the display)

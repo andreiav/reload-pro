@@ -91,6 +91,7 @@ const menudata set_readout_menu = {
 		{"Resistance", {NULL, (void*)READOUT_RESISTANCE, 0}},
 		{"Total current", {NULL, (void*)READOUT_TOTAL_CURRENT, 0}},
 		{"Total power", {NULL, (void*)READOUT_TOTAL_POWER, 0}},
+        {"Min voltage", {NULL, (void*)READOUT_MIN_VOLTAGE, 0}},
 		{"None", {NULL, (void*)READOUT_NONE, 0}},
         {"EXIT", STATE_MAIN},
 		{NULL, {NULL, NULL, 0}},
@@ -308,6 +309,10 @@ void print_watt_hours(char *buf) {
 	format_number(get_microwatt_hours(), "Wh", buf);
 }
 
+void print_min_voltage(char *buf) {
+	format_number(get_min_voltage(), "V", buf);
+}
+
 const readout_function_impl readout_functions[] = {
 	{print_nothing, ""},
 	{print_setpoint, "SET"},
@@ -317,6 +322,7 @@ const readout_function_impl readout_functions[] = {
 	{print_resistance, ""},
 	{print_amp_hours, ""},
 	{print_watt_hours, ""},
+    {print_min_voltage, ""},
 };
 
 static void draw_status(const display_config_t *config) {
